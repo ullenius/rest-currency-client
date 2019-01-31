@@ -52,9 +52,15 @@ public class RestClient {
         Invocation invocation = target.request("application/JSON").buildGet();
         Response response = invocation.invoke();
         
-        System.out.println(response.getHeaders().toString());
-        System.out.println(response.getStatus());
+//        System.out.println(response.getHeaders().toString());
+//        System.out.println(response.getStatus());
         
+        if (response.getStatus() != 200) {
+            System.out.println("Network error! Obtained code : " + response.getStatus());
+            System.out.println("Exiting program");
+            return;
+        }
+
         String result = response.readEntity(String.class);
 
         //System.out.println(result);
