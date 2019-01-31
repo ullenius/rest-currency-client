@@ -12,6 +12,6 @@ Uses: https://exchangeratesapi.io/
 
 Thanks to Madis Väin (EST) for the API :)
 
-##Libraries
+## Libraries
 
 Uses resteasy and google gson.
