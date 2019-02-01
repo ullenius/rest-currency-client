@@ -1,4 +1,4 @@
-# REST Currency Client
+# Rest Curry - REST CuRRencY client
 
 A simple REST client for receiving up to date currency exchange rates.
 
