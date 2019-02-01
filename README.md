@@ -1,6 +1,5 @@
-# Rest Curry - REST CuRRencY client
-
-A simple REST client for receiving up to date currency exchange rates.
+# Rest Curry
+Rest CuRRencY client. A simple REST client for receiving up to date currency exchange rates.
 
 Obtains currency exchange rates in JSON-format from server using
 REST and stores them as a POJO (plain old java object).
