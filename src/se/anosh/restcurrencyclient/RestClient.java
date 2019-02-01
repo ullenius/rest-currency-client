@@ -1,15 +1,15 @@
-/**
- *
- * ITHS 2019 Rest client exercise
- *
- * Obtains currency exchange rates in JSON from server using
- * REST and stores them as a POJO (plain old java object)
- *
- * Uses: https://exchangeratesapi.io/
- *
- * Thanks to Madis Väin (EST) for the API :)
- *
- */
+ /**
+  *
+  * ITHS 2019 Rest client exercise
+  *
+  * Obtains currency exchange rates in JSON from server using
+  * REST and stores them as a POJO (plain old java object)
+  *
+  * Uses: https://exchangeratesapi.io/
+  *
+  * Thanks to Madis Väin (EST) for the API :)
+  *
+  */
 
 package se.anosh.restcurrencyclient;
 
@@ -55,24 +55,24 @@ public class RestClient {
         if (response.getStatus() != 200) {
             System.out.println("Network error! Obtained code : " + response.getStatus());
             System.out.println("Exiting program");
-            // return;
+            return; // exits program
         }
         
         String result = response.readEntity(String.class);
-//System.out.println(result);
-
-Gson gson = new GsonBuilder().setPrettyPrinting().create();
-ExchangeRate valuta = gson.fromJson(result, ExchangeRate.class);
-response.close();
-
-System.out.println("Base: " + valuta.getBase());
-System.out.println("Date: " + valuta.getDate());
-
-Map<String,Double> map = new HashMap(valuta.getRates());
-for (String key : map.keySet()) {
-    System.out.println(key + "\t" + map.get(key));
-}
-
+        //System.out.println(result);
+        
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        ExchangeRate valuta = gson.fromJson(result, ExchangeRate.class);
+        response.close();
+        
+        System.out.println("Base: " + valuta.getBase());
+        System.out.println("Date: " + valuta.getDate());
+        
+        Map<String,Double> map = new HashMap(valuta.getRates());
+        for (String key : map.keySet()) {
+            System.out.println(key + "\t" + map.get(key));
+        }
+        
     }
     
     private void menu() {
@@ -93,7 +93,9 @@ for (String key : map.keySet()) {
             
         } while (input > size || input < 1);
         
-        
+        /**
+         * The REST-service uses € EUR as default base currency
+         */
         if (input != 1)
             url = url.concat("?base=" + CurrencyCode.get(input));
         sc.close(); // closes Scanner
