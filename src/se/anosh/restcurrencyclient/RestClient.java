@@ -42,7 +42,7 @@ public class RestClient {
     
     private void run() {
         
-        System.out.println("RestCurrency - Foreign Exchange rates REST-client\n");
+        System.out.println("Rest Curry - REST CuRRencY clienti\nFOREX REST-client\n");
        
         menu(); // user IO
         
