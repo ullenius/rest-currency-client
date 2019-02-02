@@ -1,5 +1,6 @@
 package se.anosh.restcurrencyclient.domain;
 
+import java.math.BigDecimal;
 import java.util.Collections;
 import java.util.Map;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -16,7 +17,7 @@ public class ExchangeRate {
     
     private String base;
     private String date;
-    private Map<String,Double> rates;
+    private Map<String,BigDecimal> rates;
     
     public ExchangeRate() {
         
@@ -38,11 +39,11 @@ public class ExchangeRate {
         this.date = date;
     }
 
-    public Map<String, Double> getRates() {
+    public Map<String, BigDecimal> getRates() {
         return Collections.unmodifiableMap(rates);
     }
 
-    public void setRates(Map<String, Double> rates) {
+    public void setRates(Map<String, BigDecimal> rates) {
         this.rates = rates;
     }
     @Override
