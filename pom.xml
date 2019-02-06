@@ -28,6 +28,14 @@
             <artifactId>resteasy-client</artifactId>
             <version>3.0.2.Final</version>
         </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/javax/javaee-api -->
+<dependency>
+    <groupId>javax</groupId>
+    <artifactId>javaee-api</artifactId>
+    <version>8.0</version>
+    <scope>provided</scope>
+</dependency>
 
     </dependencies>
     
