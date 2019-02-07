@@ -12,6 +12,9 @@ https://exchangeratesapi.io/
 
 Thanks to Madis Väin (EST) for the API :)
 
+## API Documentation
+https://ullenius.github.io/rest-currency-client/
+
 ## Libraries
 
 Uses resteasy and google gson.
